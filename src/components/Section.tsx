@@ -18,7 +18,7 @@ export default function Section({
   icon,
 }: SectionProps) {
   return (
-    <section id={id} className="mb-16 scroll-mt-30">
+    <section id={id} className="mb-16 scroll-mt-30 min-h-[80vh]">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div className="flex items-center space-x-3">
