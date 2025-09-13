@@ -18,11 +18,11 @@ export default function Section({
   icon,
 }: SectionProps) {
   return (
-    <section id={id} className="mb-16 scroll-mt-30 min-h-[80vh]">
+    <section id={id} className="card mb-16 scroll-mt-30 min-h-[80vh] bg-base-100 p-6 shadow-md">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div className="card-title flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div className="flex items-center space-x-3">
-          <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl bg-amber-100">
+          <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl">
             {icon ? (
               icon
             ) : (
@@ -39,7 +39,7 @@ export default function Section({
             )}
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="text-base sm:text-lg font-bold text-base-content truncate">
+            <h3 className="sm:text-lg font-bold text-base text-base-content truncate">
               {title}
             </h3>
             <div className="text-base-content/60 text-xs sm:text-sm mt-1 truncate">
@@ -50,7 +50,7 @@ export default function Section({
       </div>
 
       {/* Content Grid */}
-      <div className={`grid ${gridCols} gap-6 md:gap-10`}>{children}</div>
+      <div className={`card-body grid ${gridCols} gap-6 md:gap-10`}>{children}</div>
     </section>
   );
 }
