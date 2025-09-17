@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div
             className="grid grid-cols-1 mt-3 gap-6
-               text-black "
+               text-black"
           >
             {/* Primary Focus */}
             <Section
@@ -39,8 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Showcasing major areas of interest"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilCompass} className="w-9 h-9 text-gray-900 transition-transform rotate-yoyo rotate-yoyo-180"/>
-                // <IoCompassOutline className="w-9 h-9 text-gray-900 transition-transform duration-500 ease-in-out hover:rotate-180"/>
+                <CIcon icon={cilCompass} className="w-9 h-9 rotate-yoyo rotate-yoyo-180"/>
               }
             >
               <div className="h-40 bg-white rounded-lg shadow"></div>
@@ -56,7 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Showcasing what I have done"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilPuzzle} className="w-9 h-9 text-gray-900 flip-yoyo-y"/>
+                <CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y"/>
               }
             >
               <div className="h-40 bg-white rounded-lg shadow"></div>
@@ -72,7 +71,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="What I have work on"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilCasino} className="w-9 h-9 text-gray-900 rotate-yoyo rotate-yoyo-90"/>
+                <CIcon icon={cilCasino} className="w-9 h-9 rotate-yoyo rotate-yoyo-90"/>
               }
             >
               <div className="h-40 bg-white rounded-lg shadow"></div>
@@ -88,7 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Showcasing what I have learned"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilEducation} className="w-9 h-9 text-gray-900 flip-yoyo-y"/>
+                <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y"/>
               }
             >
               <div className="h-32 bg-white rounded-lg shadow"></div>
@@ -102,7 +101,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Reach me"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilChatBubble} className="w-9 h-9 text-gray-900 flip-yoyo-y"/>
+                <CIcon icon={cilChatBubble} className="w-9 h-9 flip-yoyo-y"/>
               }
             >
               <div className="h-20 bg-white rounded-lg shadow"></div>

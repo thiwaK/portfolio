@@ -33,10 +33,6 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
-  scrollbar-width: thin;
-}
-
 /* Hide scrollbar for Chrome, Safari, and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -125,4 +121,10 @@ html {
 
 .flip-yoyo-y:hover {
   animation: flipYoyoY 1s ease-in-out forwards;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+  }
 }

@@ -2,12 +2,16 @@ import { JSX, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CIcon } from "@coreui/icons-react";
 import { cilCloudDownload } from "@coreui/icons";
-import { FaGithubAlt } from 'react-icons/fa6';
-import { BiLogoLinkedin } from 'react-icons/bi';
-import { FaMedium } from 'react-icons/fa6';
-import { BiLogoGmail } from 'react-icons/bi';
+import { FaGithubAlt } from "react-icons/fa6";
+import { BiLogoLinkedin } from "react-icons/bi";
+import { FaMedium } from "react-icons/fa6";
+import { BiLogoGmail } from "react-icons/bi";
 
 import { portfolioConfig } from "@/config/portfolio.config";
+
+const formattedTitles = portfolioConfig.title.join(
+  `<span className="text-gray-500"> | </span>`
+);
 
 const sidebarContent: Record<string, JSX.Element> = {
   focus: (
@@ -29,38 +33,51 @@ const sidebarContent: Record<string, JSX.Element> = {
           </div>
         </div> */}
 
-        <h2 className="text-base text-base-content truncate mt-4 font-semibold">
+        <h2 className="text-xl font-semibold sm:text-2xl text-primary leading-snug pb-2">
           {portfolioConfig.name}
         </h2>
-        <p className="text-sm text-gray-500 mb-4">{portfolioConfig.title}</p>
+        <div className="text-sm text-base-content/70 mb-6 mt-3 font-mono flex flex-wrap justify-center gap-2 leading-relaxed">
+          {portfolioConfig.title.reduce<JSX.Element[]>((acc, title, i) => {
+            // if (i > 0) {
+            //   acc.push(
+            //     <span key={`sep-${i}`} className="text-gray-400">
+            //       |
+            //     </span>
+            //   );
+            // }
+            acc.push(
+              <span
+                key={title}
+                className="text-xs whitespace-nowrap badge badge-soft badge-info badge-md"
+              >
+                {title}
+              </span>
+            );
+            return acc;
+          }, [])}
+        </div>
 
-        <button className="btn btn-primary group text-base-100 rounded shadow relative overflow-hidden">
-          {/* Text */}
-          <span className="transition duration-400 opacity-100 group-hover:opacity-0">
-            Resume
+        <button className="btn btn-primary btn-outline btn-sm group rounded shadow relative flex items-center justify-center overflow-hidden ">
+          <span className="transition-all duration-300 group-hover:text-base-300">
+            Download Resume
           </span>
-          {/* Icon */}
-          <CIcon
-            icon={cilCloudDownload}
-            className="w-7 h-7 absolute inset-0 m-auto opacity-0 transition duration-400 group-hover:opacity-100"
-          />
         </button>
       </div>
 
       {/* Social Links */}
       <div className="flex justify-center gap-4">
-        <div className="rounded-full border-3 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <FaGithubAlt className="w-8 h-8 rounded-full bg-primary"/>
-          </div>
-        <div className="rounded-full border-3 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <FaMedium className="w-8 h-8 rounded-full bg-primary"/>
-          </div>
-        <div className="rounded-full border-3 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <BiLogoLinkedin className="w-8 h-8 rounded-full bg-primary"/>
-          </div>
-          <div className="rounded-full border-3 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <BiLogoGmail className="w-8 h-8 rounded-full bg-primary"/>
-          </div>
+        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
+          <FaGithubAlt className="w-7 h-7 rounded-full bg-primary" />
+        </div>
+        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
+          <FaMedium className="w-7 h-7 rounded-full bg-primary" />
+        </div>
+        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
+          <BiLogoLinkedin className="w-7 h-7 rounded-full bg-primary" />
+        </div>
+        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
+          <BiLogoGmail className="w-7 h-7 rounded-full bg-primary" />
+        </div>
       </div>
 
       {/* Bio */}

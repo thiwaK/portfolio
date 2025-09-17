@@ -18,14 +18,15 @@ export default function Section({
   icon,
 }: SectionProps) {
   return (
-    <section id={id} className="card mb-16 scroll-mt-30 min-h-[80vh] bg-base-100 p-6 shadow-md">
+    <section
+      id={id}
+      className="card mb-16 min-h-[80vh] bg-base-100 p-6 shadow-md"
+    >
       {/* Header */}
       <div className="card-title flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-        <div className="flex items-center space-x-3">
-          <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl">
-            {icon ? (
-              icon
-            ) : (
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary/75 rounded-xl">
+            {icon ?? (
               <svg
                 className="fill-none stroke-gray-500"
                 width="24"
@@ -33,25 +34,31 @@ export default function Section({
                 viewBox="0 0 64 64"
                 xmlns="http://www.w3.org/2000/svg"
                 strokeWidth="3"
+                role="img"
+                aria-hidden="true"
               >
                 <circle cx="32" cy="32" r="28" />
               </svg>
             )}
           </div>
+
           <div className="min-w-0 flex-1">
-            <h3 className="sm:text-lg font-bold text-base text-base-content truncate">
+            <h3 className="text-base sm:text-lg font-bold text-base-content truncate">
               {title}
             </h3>
-            <div className="text-base-content/60 text-xs sm:text-sm mt-1 truncate">
-              {subtitle}
-            </div>
+            {subtitle && (
+              <p className="text-base-content/60 text-xs font-extralight sm:text-sm mt-1 truncate">
+                {subtitle}
+              </p>
+            )}
           </div>
         </div>
       </div>
 
       {/* Content Grid */}
-      <div className={`card-body grid ${gridCols} gap-6 md:gap-10`}>{children}</div>
+      <div className={`card-body grid ${gridCols} gap-6 md:gap-10`}>
+        {children}
+      </div>
     </section>
   );
 }
-

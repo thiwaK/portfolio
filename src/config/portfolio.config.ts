@@ -1,6 +1,6 @@
 export const portfolioConfig = {
   name: "Thiwanka Munasinghe",
-  title: "Geospatial Engineer | Cartographer | Python Dev",
+  title: ["Geospatial Engineer", "Cartographer", "Full-Stack Developer"],
   description: "I am a Passionate Geospatial Engineer",
   location: "Gampaha, Sri Lanka",
   email: "thiwanka.munasinghe@hotmail.com",

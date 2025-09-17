@@ -14,11 +14,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const formattedTitles = portfolioConfig.title.join(" | ");
+
 export const metadata: Metadata = {
   metadataBase: new URL(portfolioConfig.seo.url),
   title: {
     default: portfolioConfig.name,
-    template: `%s - ${portfolioConfig.title}`,
+    template: `%s - ${formattedTitles}`,
   },
   description: portfolioConfig.description,
 
