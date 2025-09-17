@@ -33,6 +33,8 @@ const sidebarContent: Record<string, JSX.Element> = {
           </div>
         </div> */}
 
+
+
         <h2 className="text-xl font-semibold sm:text-2xl text-primary leading-snug pb-2">
           {portfolioConfig.name}
         </h2>
@@ -48,7 +50,7 @@ const sidebarContent: Record<string, JSX.Element> = {
             acc.push(
               <span
                 key={title}
-                className="text-xs whitespace-nowrap badge badge-soft badge-info badge-md"
+                className="text-xs whitespace-nowrap badge badge-soft badge-dash badge-md"
               >
                 {title}
               </span>
@@ -57,8 +59,8 @@ const sidebarContent: Record<string, JSX.Element> = {
           }, [])}
         </div>
 
-        <button className="btn btn-primary btn-outline btn-sm group rounded shadow relative flex items-center justify-center overflow-hidden ">
-          <span className="transition-all duration-300 group-hover:text-base-300">
+        <button className="btn btn-primary btn-outline btn-sm group rounded relative flex items-center justify-center overflow-hidden transition-all transform duration-400 hover:shadow-lg">
+          <span className="group-hover:text-base-100 ">
             Download Resume
           </span>
         </button>
@@ -66,23 +68,23 @@ const sidebarContent: Record<string, JSX.Element> = {
 
       {/* Social Links */}
       <div className="flex justify-center gap-4">
-        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <FaGithubAlt className="w-7 h-7 rounded-full bg-primary" />
+        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+          <FaGithubAlt className="w-7 h-7 rounded-full" />
         </div>
-        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <FaMedium className="w-7 h-7 rounded-full bg-primary" />
+        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+          <FaMedium className="w-7 h-7 rounded-full" />
         </div>
-        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <BiLogoLinkedin className="w-7 h-7 rounded-full bg-primary" />
+        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+          <BiLogoLinkedin className="w-7 h-7 rounded-full" />
         </div>
-        <div className="rounded-full border-3 border-base-200 p-1 bg-primary transform duration-400 hover:scale-110 hover:shadow-lg">
-          <BiLogoGmail className="w-7 h-7 rounded-full bg-primary" />
+        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+          <BiLogoGmail className="w-7 h-7 rounded-full" />
         </div>
       </div>
 
       {/* Bio */}
-      <div className="bg-white p-4 rounded-md shadow">
-        <p className="text-sm text-gray-600">
+      <div className="bg-base-100 p-4 rounded-md shadow">
+        <p className="text-sm text-primary">
           Short bio goes here. Describe yourself in a few lines.
         </p>
       </div>

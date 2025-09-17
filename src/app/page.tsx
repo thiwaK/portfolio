@@ -42,10 +42,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <CIcon icon={cilCompass} className="w-9 h-9 rotate-yoyo rotate-yoyo-180"/>
               }
             >
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
             </Section>
 
             {/* Projects */}
@@ -58,10 +58,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y"/>
               }
             >
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
             </Section>
 
             {/* Experience */}
@@ -74,10 +74,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <CIcon icon={cilCasino} className="w-9 h-9 rotate-yoyo rotate-yoyo-90"/>
               }
             >
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
-              <div className="h-40 bg-white rounded-lg shadow"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
             </Section>
 
             {/* Education */}
@@ -90,8 +90,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y"/>
               }
             >
-              <div className="h-32 bg-white rounded-lg shadow"></div>
-              <div className="h-32 bg-white rounded-lg shadow"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
             </Section>
 
             {/* Contact */}
