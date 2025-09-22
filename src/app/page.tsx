@@ -8,14 +8,21 @@ import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 
 import GoToTop from "@/components/ui/scroll_to_top";
+import CardFocus from "@/components/ui/card-focus";
 
-import { CIcon } from '@coreui/icons-react';
-import { cilCompass, cilEducation, cilFeaturedPlaylist, cilCasino, cilPuzzle, cilThumbUp, cilChatBubble,
- cilCloudDownload
- } from "@coreui/icons";
+import { CIcon } from "@coreui/icons-react";
+import {
+  cilCompass,
+  cilEducation,
+  cilFeaturedPlaylist,
+  cilCasino,
+  cilPuzzle,
+  cilThumbUp,
+  cilChatBubble,
+  cilCloudDownload,
+} from "@coreui/icons";
 
-import { IoCompassOutline } from 'react-icons/io5';
-
+import { IoCompassOutline } from "react-icons/io5";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [activeSection, setActiveSection] = useState("focus");
@@ -23,10 +30,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="root">
       <div className="fade-in h-screen">
-        <Navbar activeSection={activeSection} setActiveSection={setActiveSection}/>
+        <Navbar
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
 
         <main className="bg-base-300 grid gap-6 pl-10 pr-10 pt-30 grid-cols-[2fr_5fr] grid-rows-[auto_1fr]">
-          <Sidebar activeSection={activeSection}/>
+          <Sidebar activeSection={activeSection} />
 
           <div
             className="grid grid-cols-1 mt-3 gap-6
@@ -39,13 +49,43 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Showcasing major areas of interest"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilCompass} className="w-9 h-9 rotate-yoyo rotate-yoyo-180"/>
+                <CIcon
+                  icon={cilCompass}
+                  className="w-9 h-9 rotate-yoyo rotate-yoyo-180"
+                />
               }
             >
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <CardFocus
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
+
+              <CardFocus
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
+
+              <CardFocus
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
+
+              <CardFocus
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
             </Section>
 
             {/* Projects */}
@@ -54,9 +94,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               title="Projects"
               subtitle="Showcasing what I have done"
               gridCols="grid-cols-1 md:grid-cols-2"
-              icon={
-                <CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y"/>
-              }
+              icon={<CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y" />}
             >
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
@@ -71,7 +109,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="What I have work on"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilCasino} className="w-9 h-9 rotate-yoyo rotate-yoyo-90"/>
+                <CIcon
+                  icon={cilCasino}
+                  className="w-9 h-9 rotate-yoyo rotate-yoyo-90"
+                />
               }
             >
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
@@ -87,7 +128,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Showcasing what I have learned"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y"/>
+                <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y" />
               }
             >
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
@@ -101,7 +142,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               subtitle="Reach me"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
-                <CIcon icon={cilChatBubble} className="w-9 h-9 flip-yoyo-y"/>
+                <CIcon icon={cilChatBubble} className="w-9 h-9 flip-yoyo-y" />
               }
             >
               <div className="h-20 bg-white rounded-lg shadow"></div>
