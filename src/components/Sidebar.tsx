@@ -91,7 +91,7 @@ const sidebarContent: Record<string, JSX.Element> = {
     </div>
   ),
   projects: (
-    <div className="relative bg-indigo-50 rounded-lg shadow-md p-6 pt-24 text-center">
+    <div className="relative bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
       <h3 className="font-bold text-lg mb-2">Projects</h3>
       <ul className="list-disc pl-5">
         <li>Featured case studies</li>

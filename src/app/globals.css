@@ -15,6 +15,43 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+[data-theme="nord"] {
+  .btn {
+    /* background-color: #1EA1F1;
+    border-color: #1EA1F1; */
+    border-radius: 0.25rem;
+    --tw-duration: 400ms;
+    transition-duration: 400ms;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function) /* cubic-bezier(0.4, 0, 0.2, 1) */);
+    transition-duration: var(--tw-duration, var(--default-transition-duration) /* 150ms */);
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+
+    
+
+  }
+  .btn:hover {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+
+    
+    span{
+      color:text-base-100;
+    }
+          
+  }
+}
+
+@plugin "daisyui/theme" {
+  name: "nord";
+  default: true;
+  /* --color-primary: blue;
+  --color-secondary: teal; */
+  --color-base-400: oklch(86% 0.022 263.7);
+}
+
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -128,3 +165,4 @@ html {
     scrollbar-width: thin;
   }
 }
+

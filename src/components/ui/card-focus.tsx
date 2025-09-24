@@ -18,8 +18,8 @@ export default function CardFocus({
   return (
     <div
       className="card h-40 rounded-lg shadow bg-info/5 transition-all duration-400 
-                 border hover:border-primary/30 hover:scale-105 p-0 
-                 hover:shadow-lg border-primary/10"
+                 border hover:border-primary/30 hover:scale-[101%] p-0 
+                 hover:shadow-lg border-primary/10 border-b-0"
     >
       <div className="flex h-full">
         {/* Image */}
@@ -35,7 +35,7 @@ export default function CardFocus({
         <div className="p-4 flex-1 flex flex-col justify-between">
           <div>
             <h2 className="card-title text-primary">{title}</h2>
-            <p className="text-primary/90">{description}</p>
+            <p className="text-primary/90 line-clamp-3">{description}</p>
           </div>
 
           <div className="card-actions justify-end">

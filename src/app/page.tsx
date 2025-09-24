@@ -9,6 +9,7 @@ import Section from "@/components/Section";
 
 import GoToTop from "@/components/ui/scroll_to_top";
 import CardFocus from "@/components/ui/card-focus";
+import CardProject from "@/components/ui/card-project";
 
 import { CIcon } from "@coreui/icons-react";
 import {
@@ -93,11 +94,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               id="projects"
               title="Projects"
               subtitle="Showcasing what I have done"
-              gridCols="grid-cols-1 md:grid-cols-2"
+              gridCols="grid-cols-1 md:grid-cols-3"
               icon={<CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y" />}
             >
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <CardProject
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
+              <CardProject
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
             </Section>
