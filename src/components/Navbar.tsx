@@ -59,10 +59,10 @@ export default function Navbar({
     };
   }, [setActiveSection, sections]);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "light" || saved === "dark") setTheme(saved);
-  }, []);
+  // useEffect(() => {
+  //   const saved = localStorage.getItem("theme");
+  //   if (saved === "light" || saved === "dark") setTheme(saved);
+  // }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

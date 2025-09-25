@@ -8,10 +8,86 @@ import { FaMedium } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 
 import { portfolioConfig } from "@/config/portfolio.config";
+import { scrollToPosition, scrollToTop } from "@/components/animation/scroll";
 
-const formattedTitles = portfolioConfig.title.join(
-  `<span className="text-gray-500"> | </span>`
-);
+function FilterControls({ tagsList }: { tagsList: string[] }) {
+  const [activeTag, setActiveTag] = useState<string>("all");
+  const languages = ["python", "javascript", "sql", "kotlin"];
+
+  const handleFilter = (tag: string) => {
+    setActiveTag(tag);
+
+    const SCROLL_OFFSET = -130;
+    const el = document.getElementById("projects");
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY + SCROLL_OFFSET;
+      scrollToPosition(y, 700);
+    }
+
+    const cards = document.querySelectorAll<HTMLDivElement>(
+      ".card-container .card"
+    );
+    cards.forEach((card) => {
+      const cardTags = (card.dataset.tags || "")
+        .split(" ")
+        .map((t) => t.trim());
+      if (tag === "all") {
+        card.style.display = "flex";
+      } else {
+        card.style.display = cardTags.includes(tag) ? "flex" : "none";
+      }
+    });
+  };
+
+  return (
+    <div className="flex flex-wrap gap-2 mb-4 justify-center">
+      <button
+        className={`btn text-xs badge badge-soft badge-md border-2 border-transparent  ${
+          activeTag === "all"
+            ? "text-base-100 bg-primary hover:bg-primary"
+            : "btn-ghost hover:bg-primary/30"
+        }`}
+        onClick={() => handleFilter("all")}
+      >
+        All
+      </button>
+
+      {tagsList.map((tag) => {
+        const isActive = activeTag === tag;
+        const isLanguage = languages.includes(tag);
+        const isProjectTag = ["featured", "in-progress"].includes(tag);
+
+        // Determine base classes
+        let classes =
+          "btn text-xs badge badge-soft badge-md border-2 border-transparent";
+
+        // Active tag colors
+        if (isActive) {
+          
+          if (isLanguage) classes += " bg-blue-600 text-base-200";
+          else if (isProjectTag) classes += " bg-green-600 text-base-200";
+          else classes += " text-base-100 bg-primary hover:bg-primary"; // default active
+        
+        // Inactive tag colors
+        } else {
+          if (isLanguage) classes += " text-blue-400 hover:bg-blue-400/30";
+          else if (isProjectTag) classes += " text-green-400 hover:bg-green-400/30";
+          else classes += " btn-ghost hover:bg-primary/30"; // default inactive
+        }
+
+        return (
+          <button
+            key={tag}
+            className={classes}
+            onClick={() => handleFilter(tag)}
+          >
+            {tag}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 const sidebarContent: Record<string, JSX.Element> = {
   focus: (
@@ -32,8 +108,6 @@ const sidebarContent: Record<string, JSX.Element> = {
             <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
           </div>
         </div> */}
-
-
 
         <h2 className="text-xl font-semibold sm:text-2xl text-primary leading-snug pb-2">
           {portfolioConfig.name}
@@ -60,9 +134,7 @@ const sidebarContent: Record<string, JSX.Element> = {
         </div>
 
         <button className="btn btn-primary btn-outline btn-sm group rounded relative flex items-center justify-center overflow-hidden transition-all transform duration-400 hover:shadow-lg">
-          <span className="group-hover:text-base-100 ">
-            Download Resume
-          </span>
+          <span className="group-hover:text-base-100 ">Download Resume</span>
         </button>
       </div>
 
@@ -91,13 +163,30 @@ const sidebarContent: Record<string, JSX.Element> = {
     </div>
   ),
   projects: (
-    <div className="relative bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
-      <h3 className="font-bold text-lg mb-2">Projects</h3>
-      <ul className="list-disc pl-5">
-        <li>Featured case studies</li>
-        <li>GitHub repos</li>
-        <li>Live demos</li>
-      </ul>
+    <div className="relative flex flex-col gap-2 bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
+      <h3 className="font-bold text-lg mb-2 text-primary">Tags</h3>
+      <div>
+        {/* Filter Controls */}
+        <FilterControls
+          tagsList={[
+            "featured",
+            "in-progress",
+            "design",
+            "backend",
+            "frontend",
+            "ui",
+            "ux",
+            "api",
+            "devops",
+            "research",
+            "testing",
+            "python",
+            "javascript",
+            "sql",
+            "kotlin",
+          ]}
+        />
+      </div>
     </div>
   ),
   experience: (

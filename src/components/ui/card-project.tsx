@@ -2,6 +2,7 @@ interface CardProjectProps {
   title: string;
   description: string;
   imageUrl: string;
+  tags?: string[];
   buttonText?: string;
   onButtonClick?: () => void;
 }
@@ -10,24 +11,35 @@ export default function CardProject({
   title,
   description,
   imageUrl,
+  tags = [],
   buttonText = "View Project",
   onButtonClick,
 }: CardProjectProps) {
+  const normalizedTags = tags
+    .map((t) => t.toLowerCase().trim())
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className="card bg-info/5 shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[101%]">
+    <div
+      className={`card bg-info/5 shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[101%] flex flex-col`}
+      data-tags={normalizedTags} // IMPORTANT for filtering
+    >
       {/* Image */}
       <img src={imageUrl} alt={title} className="w-full h-40 object-cover" />
 
       {/* Body */}
-      <div className="p-4">
-        {/* Tags (example for project, adjust as needed) */}
+      <div className="p-4 flex-1">
+        {/* Dynamic Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="px-2 py-1 text-[0.6rem] whitespace-nowrap badge  badge-soft badge-dash badge-sm">
-            featured
-          </span>
-          <span className="px-2 py-1 text-[0.6rem] whitespace-nowrap badge badge-soft badge-dash badge-sm">
-            in-progress
-          </span>
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-1 text-[0.6rem] whitespace-nowrap badge badge-soft badge-dash badge-sm"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
         {/* Title */}
@@ -38,16 +50,19 @@ export default function CardProject({
       </div>
 
       {/* Footer */}
-      <div className="flex items-center gap-2 p-4 bg-base-300/30">
+      <div className="flex items-center gap-2 p-4 bg-base-300/30 leading-0">
         <button
           onClick={onButtonClick}
-          className="flex-1 btn btn-sm btn-soft btn-neutral border-2 rounded group">
-          <span className="text-gray-800 group-hover:text-gray-100 dark:text-gray-100">{buttonText}</span>
+          className="flex-1 btn btn-sm btn-neutral btn-soft border-2 rounded group"
+        >
+          <span className="group-hover:text-gray-100 text-[color-mix(in_oklch,_var(--color-primary)_90%,_black)]">
+            {buttonText}
+          </span>
         </button>
+
         <button className="btn btn-sm btn-soft btn-neutral border-2 rounded group hover:bg-rose-100 hover:border-rose-200">
           <span className="group-hover:hidden">❤️</span>
           <span className="hidden group-hover:inline-flex">💖</span>
-          
         </button>
       </div>
     </div>

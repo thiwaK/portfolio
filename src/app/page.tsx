@@ -40,9 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Sidebar activeSection={activeSection} />
 
           <div
-            className="grid grid-cols-1 mt-3 gap-6
-               text-black"
-          >
+            className="grid grid-cols-1 mt-3 text-black ">
             {/* Primary Focus */}
             <Section
               id="focus"
@@ -94,13 +92,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               id="projects"
               title="Projects"
               subtitle="Showcasing what I have done"
-              gridCols="grid-cols-1 md:grid-cols-3"
+              gridCols="grid-cols-1 md:grid-cols-3 card-container"
               icon={<CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y" />}
             >
               <CardProject
                 title="Card Title"
                 description="A card component has a figure, a body part, and inside body there are title and actions parts."
                 imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                tags={["featured", "in-progress"]}
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
+              <CardProject
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                tags={["backend", "in-progress", "api"]}
                 buttonText="Show More"
                 onButtonClick={() => alert("Button clicked!")}
               />
@@ -111,8 +118,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 buttonText="Show More"
                 onButtonClick={() => alert("Button clicked!")}
               />
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <CardProject
+                title="Card Title"
+                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                buttonText="Show More"
+                onButtonClick={() => alert("Button clicked!")}
+              />
             </Section>
 
             {/* Experience */}

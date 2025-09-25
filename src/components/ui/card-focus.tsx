@@ -18,7 +18,7 @@ export default function CardFocus({
   return (
     <div
       className="card h-40 rounded-lg shadow bg-info/5 transition-all duration-400 
-                 border hover:border-primary/30 hover:scale-[101%] p-0 
+                 border hover:scale-[101%] p-0 
                  hover:shadow-lg border-primary/10 border-b-0"
     >
       <div className="flex h-full">
