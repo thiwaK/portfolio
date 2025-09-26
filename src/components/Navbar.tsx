@@ -7,7 +7,7 @@ import { MdDarkMode } from 'react-icons/md';
 
 const SCROLL_OFFSET = -130; // adjust for navbar height
 const OBSERVER_THRESHOLD = 0.6;
-const lightThemeName = "nord";
+const lightThemeName = "winter";
 const darkThemeName = "dim";
 
 export default function Navbar({

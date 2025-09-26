@@ -20,7 +20,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className="card mb-16 min-h-[80vh] bg-base-100 p-6 shadow-md"
+      className="card mb-16 min-h-[80vh] bg-base-100 p-6 shadow-md rounded-lg"
     >
       {/* Header */}
       <div className="card-title flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">

@@ -1,7 +1,7 @@
-import { JSX, useState, useEffect } from "react";
+import { JSX, useState, useEffect } from "react"
+import Image from "next/image";
+
 import { motion, AnimatePresence } from "framer-motion";
-import { CIcon } from "@coreui/icons-react";
-import { cilCloudDownload } from "@coreui/icons";
 import { FaGithubAlt } from "react-icons/fa6";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { FaMedium } from "react-icons/fa6";
@@ -9,10 +9,11 @@ import { BiLogoGmail } from "react-icons/bi";
 
 import { portfolioConfig } from "@/config/portfolio.config";
 import { scrollToPosition, scrollToTop } from "@/components/animation/scroll";
+import { ExperienceItem } from "./ui/experience-item";
+import Timeline from "./ui/experience-item";
 
 function FilterControls({ tagsList }: { tagsList: string[] }) {
   const [activeTag, setActiveTag] = useState<string>("all");
-  const languages = ["python", "javascript", "sql", "kotlin"];
 
   const handleFilter = (tag: string) => {
     setActiveTag(tag);
@@ -42,7 +43,7 @@ function FilterControls({ tagsList }: { tagsList: string[] }) {
   return (
     <div className="flex flex-wrap gap-2 mb-4 justify-center">
       <button
-        className={`btn text-xs badge badge-soft badge-md border-2 border-transparent  ${
+        className={`btn text-xs badge badge-soft badge-md border-2 border-transparent font-normal ${
           activeTag === "all"
             ? "text-base-100 bg-primary hover:bg-primary"
             : "btn-ghost hover:bg-primary/30"
@@ -52,26 +53,30 @@ function FilterControls({ tagsList }: { tagsList: string[] }) {
         All
       </button>
 
+      {/* TODO: Need improvements */}
       {tagsList.map((tag) => {
         const isActive = activeTag === tag;
-        const isLanguage = languages.includes(tag);
-        const isProjectTag = ["featured", "in-progress"].includes(tag);
+        const isLanguage = ["python", "javascript", "sql", "kotlin"].includes(
+          tag
+        );
+        const isHighlights = ["featured", "in-progress"].includes(tag);
+        const is = ["featured", "in-progress"].includes(tag);
 
         // Determine base classes
         let classes =
-          "btn text-xs badge badge-soft badge-md border-2 border-transparent";
+          "btn text-xs badge badge-soft badge-md border-2 border-transparent font-mono font-normal";
 
         // Active tag colors
         if (isActive) {
-          
           if (isLanguage) classes += " bg-blue-600 text-base-200";
-          else if (isProjectTag) classes += " bg-green-600 text-base-200";
+          else if (isHighlights) classes += " bg-green-600 text-base-200";
           else classes += " text-base-100 bg-primary hover:bg-primary"; // default active
-        
-        // Inactive tag colors
+
+          // Inactive tag colors
         } else {
-          if (isLanguage) classes += " text-blue-400 hover:bg-blue-400/30";
-          else if (isProjectTag) classes += " text-green-400 hover:bg-green-400/30";
+          if (isLanguage) classes += " text-blue-500 hover:bg-blue-400/30";
+          else if (isHighlights)
+            classes += " text-green-500 hover:bg-green-400/30";
           else classes += " btn-ghost hover:bg-primary/30"; // default inactive
         }
 
@@ -89,6 +94,29 @@ function FilterControls({ tagsList }: { tagsList: string[] }) {
   );
 }
 
+const experiences: ExperienceItem[] = [
+  {
+    role: "Freelancer",
+    company: "Independent / Remote",
+    date: "2025 July – Present",
+    description: "Geospatial solution architect, Full-stack development, and client projects.",
+  },
+  {
+    role: "Associate GIS Officer",
+    company: "GeoEDGE",
+    companyUrl: "https://example.com",
+    date: "2025 April – 2025 July",
+    description: "API integrations, database design, and backend systems.",
+  },
+  {
+    role: "Intern",
+    company: "Natural Resources Managmenet Center (NRMC)",
+    companyUrl: "https://example.com",
+    date: "2025 April – 2025 July",
+    description: "API integrations, database design, and backend systems.",
+  },
+];
+
 const sidebarContent: Record<string, JSX.Element> = {
   focus: (
     <div className="text-center flex flex-col gap-5">
@@ -96,16 +124,17 @@ const sidebarContent: Record<string, JSX.Element> = {
       <div className="card relative bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
         <div className="avatar w-32 h-32 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="rounded-full bg-base-100 border-4 border-base-300">
-            <img
+            <Image
               className="rounded-full bg-base-300 border-4 border-base-100 shadow transform duration-400 hover:scale-110 hover:shadow-lg"
               src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
+              alt="Profile image"
             />
           </div>
         </div>
 
         {/* <div className="avatar absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 avatar-online">
           <div className="ring-primary ring-offset-base-100 w-24 rounded-full ring-2 ring-offset-2">
-            <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+            <Image src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
           </div>
         </div> */}
 
@@ -190,9 +219,9 @@ const sidebarContent: Record<string, JSX.Element> = {
     </div>
   ),
   experience: (
-    <div>
+    <div className="relative flex flex-col gap-2 bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
       <h3 className="font-bold text-lg mb-2">Experience</h3>
-      <p>Quick timeline of my career and achievements.</p>
+      <Timeline items={experiences} />;
     </div>
   ),
   education: (

@@ -25,7 +25,7 @@ import {
 
 import { IoCompassOutline } from "react-icons/io5";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout(){
   const [activeSection, setActiveSection] = useState("focus");
 
   return (
@@ -36,11 +36,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           setActiveSection={setActiveSection}
         />
 
-        <main className="bg-base-300 grid gap-6 pl-10 pr-10 pt-30 grid-cols-[2fr_5fr] grid-rows-[auto_1fr]">
+        <main className="bg-base-300 grid gap-6 pl-10 pr-10 pt-30 grid-cols-[2fr_5fr] grid-rows-[auto_1fr] ">
           <Sidebar activeSection={activeSection} />
 
-          <div
-            className="grid grid-cols-1 mt-3 text-black ">
+          <div className="grid grid-cols-1 mt-3 text-black ">
             {/* Primary Focus */}
             <Section
               id="focus"
@@ -131,8 +130,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Section
               id="experience"
               title="Experience"
-              subtitle="What I have work on"
-              gridCols="grid-cols-1 md:grid-cols-2"
+              subtitle="My professional journey"
+              gridCols="grid-cols-1"
               icon={
                 <CIcon
                   icon={cilCasino}
@@ -140,7 +139,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
               }
             >
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <div className="space-y-6 ">
+                <div className="p-4 rounded-lg shadow bg-info/5 transform duration-400 hover:scale-[101%]">
+                  <h4 className="font-semibold text-primary">Freelancer</h4>
+                  <p className="text-sm text-base-content/70">2022 – Present</p>
+                  <p className="text-sm mt-2">
+                    Working on freelance projects including full-stack web apps,
+                    UI/UX design, and backend APIs.
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg shadow bg-info/5 transform duration-400 hover:scale-[101%]">
+                  <h4 className="font-semibold text-primary">Company XYZ</h4>
+                  <p className="text-sm text-base-content/70">2020 – 2022</p>
+                  <p className="text-sm mt-2">
+                    Contributed as a backend developer focusing on database
+                    optimization, API development, and cloud deployment.
+                  </p>
+                </div>
+              </div>
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
               <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CardProjectProps {
   title: string;
   description: string;
@@ -26,7 +28,7 @@ export default function CardProject({
       data-tags={normalizedTags} // IMPORTANT for filtering
     >
       {/* Image */}
-      <img src={imageUrl} alt={title} className="w-full h-40 object-cover" />
+      <Image src={imageUrl} alt={title} className="w-full h-40 object-cover" />
 
       {/* Body */}
       <div className="p-4 flex-1">

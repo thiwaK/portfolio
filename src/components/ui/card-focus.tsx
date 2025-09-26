@@ -23,7 +23,7 @@ export default function CardFocus({
     >
       <div className="flex h-full">
         {/* Image */}
-        <img
+        <Image
           src={imageUrl}
           alt={title}
           width={300}
