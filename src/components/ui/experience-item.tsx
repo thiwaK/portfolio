@@ -16,12 +16,11 @@ const Timeline: React.FC<TimelineProps> = ({ items }) => {
   return (
     <ol className="relative border-l border-primary/50 border-opacity-30 my-2 mx-4 text-left">
       {items.map((item, index) => (
-        <li key={index} className="mb-6 ml-4">
+        <li key={index} className="mb-6 ml-4 group">
           {/* Dot */}
           <div
-            className="absolute w-2 h-2 bg-primary rounded-full border border-base-100 mt-1.5"
-            style={{ left: "-4.5px" }}
-          ></div>
+            className="absolute w-2 h-2 bg-primary rounded-full border border-base-100 mt-1.5 duration-400 transition-all  group-hover:border-primary"
+            style={{ left: "-4.5px" }}></div>
 
           {/* Date */}
           <div className="my-0.5 text-xs text-base-content/70">{item.date}</div>

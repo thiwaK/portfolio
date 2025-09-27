@@ -28,7 +28,7 @@ export default function CardProject({
       data-tags={normalizedTags} // IMPORTANT for filtering
     >
       {/* Image */}
-      <Image src={imageUrl} alt={title} className="w-full h-40 object-cover" />
+      <Image src={imageUrl} alt={title} width={500} height={500} className="w-full h-40 object-cover" />
 
       {/* Body */}
       <div className="p-4 flex-1">

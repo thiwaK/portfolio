@@ -24,8 +24,9 @@ import {
 } from "@coreui/icons";
 
 import { IoCompassOutline } from "react-icons/io5";
+import CardExperience from "@/components/ui/card-experience";
 
-export default function Layout(){
+export default function Layout() {
   const [activeSection, setActiveSection] = useState("focus");
 
   return (
@@ -139,27 +140,38 @@ export default function Layout(){
                 />
               }
             >
-              <div className="space-y-6 ">
-                <div className="p-4 rounded-lg shadow bg-info/5 transform duration-400 hover:scale-[101%]">
-                  <h4 className="font-semibold text-primary">Freelancer</h4>
-                  <p className="text-sm text-base-content/70">2022 – Present</p>
-                  <p className="text-sm mt-2">
-                    Working on freelance projects including full-stack web apps,
-                    UI/UX design, and backend APIs.
-                  </p>
-                </div>
-                <div className="p-4 rounded-lg shadow bg-info/5 transform duration-400 hover:scale-[101%]">
-                  <h4 className="font-semibold text-primary">Company XYZ</h4>
-                  <p className="text-sm text-base-content/70">2020 – 2022</p>
-                  <p className="text-sm mt-2">
-                    Contributed as a backend developer focusing on database
-                    optimization, API development, and cloud deployment.
-                  </p>
-                </div>
-              </div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              <CardExperience
+                role="Freelancer"
+                date="Jul 2025 – Present"
+                description="Designed and developed geospatial and full-stack web applications for international and local clients. Delivered end-to-end solutions from requirements gathering to deployment."
+                bullets={[
+                  "Architected geospatial workflows for environmental and urban planning projects.",
+                  "Built full-stack web apps to visualize spatial data and automate reporting.",
+                  "Designed intuitive UI/UX flows improving usability for non-technical stakeholders.",
+                  "Collaborated with clients across time zones to reduce manual GIS workflows.",
+                ]}
+                tools={[
+                  "React",
+                  "Node.js",
+                  "PostGIS",
+                  "Google Earth Engine",
+                  "ArcGIS Pro",
+                  "QGIS",
+                ]}
+              />
+              <CardExperience
+                role="Associate GIS Officer"
+                company="GeoEDGE"
+                companyUrl="https://www.geoedge.net/"
+                date="Apr 2025 – Jul 2025"
+                description="Supported geospatial data analysis and cloud-based data processing workflows."
+                bullets={[
+                  "Digitized geospatial features and developed vegetation indices.",
+                  "Processed large-scale datasets on cloud platforms, improving turnaround time.",
+                  "Produced high-quality outputs ensuring accuracy and consistency.",
+                ]}
+                tools={["Google Earth Engine", "Google Earth", "QGIS", "SNAP"]}
+              />
             </Section>
 
             {/* Education */}
@@ -172,8 +184,34 @@ export default function Layout(){
                 <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y" />
               }
             >
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
-              <div className="h-40 card-body rounded-lg shadow bg-info/5 transform duration-400 hover:scale-105"></div>
+              {/* Education Card 1 */}
+              <div className="bg-info/5 p-6 rounded-lg transform duration-400 hover:scale-[101%] shadow-md hover:shadow-xl">
+                <h3 className="text-lg font-bold text-primary mb-1">
+                  BSc in Geomatics
+                </h3>
+                <p className="text-sm text-gray-500 mb-2">
+                  University of Colombo
+                </p>
+                <p className="text-sm text-gray-600">2015 - 2019</p>
+                <p className="mt-2 text-gray-700 text-sm">
+                  Specialized in GIS, Remote Sensing, and Spatial Data Analysis.
+                </p>
+              </div>
+
+              {/* Education Card 2 */}
+              <div className="bg-info/5 p-6 rounded-lg transform duration-400 hover:scale-[101%] shadow-md hover:shadow-xl">
+                <h3 className="text-lg font-bold text-primary mb-1">
+                  Diploma in GIS & Remote Sensing
+                </h3>
+                <p className="text-sm text-gray-500 mb-2">
+                  National Institute of Technology
+                </p>
+                <p className="text-sm text-gray-600">2020</p>
+                <p className="mt-2 text-gray-700 text-sm">
+                  Focused on practical GIS applications, satellite image
+                  analysis, and spatial modeling.
+                </p>
+              </div>
             </Section>
 
             {/* Contact */}

@@ -1,4 +1,4 @@
-import { JSX, useState, useEffect } from "react"
+import { JSX, useState, useEffect } from "react";
 import Image from "next/image";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -94,26 +94,31 @@ function FilterControls({ tagsList }: { tagsList: string[] }) {
   );
 }
 
+const age = new Date().getFullYear() - 1999;
+
 const experiences: ExperienceItem[] = [
   {
     role: "Freelancer",
     company: "Independent / Remote",
     date: "2025 July – Present",
-    description: "Geospatial solution architect, Full-stack development, and client projects.",
+    description:
+      "Geospatial solution architect, Full-stack development, and client projects.",
   },
   {
     role: "Associate GIS Officer",
     company: "GeoEDGE",
     companyUrl: "https://example.com",
     date: "2025 April – 2025 July",
-    description: "API integrations, database design, and backend systems.",
+    description:
+      "Feature digitization, indices development, cloud data processing(GEE).",
   },
   {
     role: "Intern",
     company: "Natural Resources Managmenet Center (NRMC)",
     companyUrl: "https://example.com",
     date: "2025 April – 2025 July",
-    description: "API integrations, database design, and backend systems.",
+    description:
+      "contributed to redefine of Sri Lanka's new sensitive area definition by calculating slope factor.",
   },
 ];
 
@@ -122,21 +127,18 @@ const sidebarContent: Record<string, JSX.Element> = {
     <div className="text-center flex flex-col gap-5">
       {/* Profile Card */}
       <div className="card relative bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
-        <div className="avatar w-32 h-32 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+        <div className="avatar w-36 h-36 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="rounded-full bg-base-100 border-4 border-base-300">
             <Image
               className="rounded-full bg-base-300 border-4 border-base-100 shadow transform duration-400 hover:scale-110 hover:shadow-lg"
-              src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
+              // src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
+              src="/avatar.png"
               alt="Profile image"
+              width={500}
+              height={500}
             />
           </div>
         </div>
-
-        {/* <div className="avatar absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 avatar-online">
-          <div className="ring-primary ring-offset-base-100 w-24 rounded-full ring-2 ring-offset-2">
-            <Image src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
-          </div>
-        </div> */}
 
         <h2 className="text-xl font-semibold sm:text-2xl text-primary leading-snug pb-2">
           {portfolioConfig.name}
@@ -185,9 +187,19 @@ const sidebarContent: Record<string, JSX.Element> = {
 
       {/* Bio */}
       <div className="bg-base-100 p-4 rounded-md shadow">
-        <p className="text-sm text-primary">
-          Short bio goes here. Describe yourself in a few lines.
-        </p>
+        <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-right">
+          <dt className="font-medium text-primary ">Location</dt>
+          <dd className="text-base-content/80 text-left">Sri Lanka</dd>
+
+          <dt className="font-medium text-primary">Age</dt>
+          <dd className="text-base-content/80 text-left">{age}</dd>
+
+          <dt className="font-medium text-primary">Education</dt>
+          <dd className="text-base-content/80 text-left">B.Sc. (Hons) in GIS</dd>
+
+          <dt className="font-medium text-primary">Personality</dt>
+          <dd className="text-base-content/80 text-left">INTJ-A</dd>
+        </dl>
       </div>
     </div>
   ),

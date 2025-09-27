@@ -28,7 +28,7 @@ export default function CardProduct({
   return (
     <div className="card w-72 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
-      <Image src={imageUrl} alt={title} className="w-full h-40 object-cover" />
+      <Image src={imageUrl} alt={title} width={288} height={288} className="w-full h-40 object-cover" />
 
       {/* Body */}
       <div className="p-4">
