@@ -43,11 +43,11 @@ export default function Section({
           </div>
 
           <div className="min-w-0 flex-1">
-            <h3 className="text-base sm:text-lg font-bold text-base-content truncate">
+            <h3 className="sm:text-lg font-bold text-base-content/90 truncate">
               {title}
             </h3>
             {subtitle && (
-              <p className="text-base-content/60 text-xs font-extralight sm:text-sm mt-1 truncate">
+              <p className="text-base-content/65 text-xs font-extralight sm:text-sm mt-1 truncate">
                 {subtitle}
               </p>
             )}

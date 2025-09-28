@@ -26,7 +26,7 @@ export default function CardProduct({
   onButtonClick,
 }: CardProductProps) {
   return (
-    <div className="card w-72 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div className="section-card">
       {/* Image */}
       <Image src={imageUrl} alt={title} width={288} height={288} className="w-full h-40 object-cover" />
 

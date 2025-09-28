@@ -24,7 +24,7 @@ export default function CardProject({
 
   return (
     <div
-      className={`card bg-info/5 shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[101%] flex flex-col`}
+      className={`section-card overflow-hidden hover:scale-[101%] flex flex-col`}
       data-tags={normalizedTags} // IMPORTANT for filtering
     >
       {/* Image */}

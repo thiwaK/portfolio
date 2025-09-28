@@ -20,7 +20,7 @@ role,
   tools,
 }) => {
   return (
-     <div className="p-4 rounded-lg bg-info/5 transform duration-400 hover:scale-[101%] shadow-md hover:shadow-xl group">
+     <div className="section-card p-4 group">
       {/* Role & Date */}
       <h4 className="font-semibold text-primary">{role}</h4>
 

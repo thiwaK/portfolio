@@ -17,9 +17,7 @@ export default function CardFocus({
 }: CardFocusProps) {
   return (
     <div
-      className="card h-40 rounded-lg shadow bg-info/5 transition-all duration-400 
-                 border hover:scale-[101%] p-0 
-                 hover:shadow-lg border-primary/10 border-b-0"
+      className="section-card border-b-0"
     >
       <div className="flex h-full">
         {/* Image */}
@@ -35,10 +33,10 @@ export default function CardFocus({
         <div className="p-4 flex-1 flex flex-col justify-between">
           <div>
             <h2 className="card-title text-primary">{title}</h2>
-            <p className="text-primary/90 line-clamp-3">{description}</p>
+            <p className="text-base-content/70 line-clamp-4 pt-3 leading-relaxed">{description}</p>
           </div>
 
-          <div className="card-actions justify-end">
+          {/* <div className="card-actions justify-end pt-2">
             <button
               className="btn btn-primary btn-xs btn-outline rounded 
                          dark:hover:text-primary-content group"
@@ -46,7 +44,7 @@ export default function CardFocus({
             >
               <span className="group-hover:text-base-100">{buttonText}</span>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ export default function Navbar({
   }, []);
 
   const sections = useMemo(
-    () => ["focus", "projects", "experience", "education", "contact"],
+    () => ["about", "projects", "experience", "education", "contact"],
     []
   );
 
@@ -72,7 +72,7 @@ export default function Navbar({
   const handleClick = useCallback((id: string, e: React.MouseEvent) => {
     e.preventDefault();
 
-    if (id === "focus") {
+    if (id === "about") {
       scrollToTop(700);
     } else {
       const el = document.getElementById(id);

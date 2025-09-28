@@ -43,9 +43,9 @@ export default function Layout() {
           <div className="grid grid-cols-1 mt-3 text-black ">
             {/* Primary Focus */}
             <Section
-              id="focus"
+              id="about"
               title="Primary Focus"
-              subtitle="Showcasing major areas of interest"
+              subtitle="Exploring my core areas of expertise and innovation"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
                 <CIcon
@@ -55,32 +55,32 @@ export default function Layout() {
               }
             >
               <CardFocus
-                title="Card Title"
-                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                title="AI & ML Solutions"
+                description="Designing and deploying intelligent systems that leverage machine learning for prediction, automation, and optimization across industries."
                 imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                 buttonText="Show More"
                 onButtonClick={() => alert("Button clicked!")}
               />
 
               <CardFocus
-                title="Card Title"
-                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                title="Earth Observation & UAV"
+                description="Harnessing drone technology and satellite imagery to monitor environments, collect geospatial data, and enable smarter decision-making."
                 imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                 buttonText="Show More"
                 onButtonClick={() => alert("Button clicked!")}
               />
 
               <CardFocus
-                title="Card Title"
-                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                title="Data Analytics & Insights"
+                description="Transforming raw data into actionable insights through advanced analytics, visualization, and storytelling for informed strategies."
                 imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                 buttonText="Show More"
                 onButtonClick={() => alert("Button clicked!")}
               />
 
               <CardFocus
-                title="Card Title"
-                description="A card component has a figure, a body part, and inside body there are title and actions parts."
+                title="Automation & Smart Systems"
+                description="Building intelligent workflows and IoT-driven solutions that enhance efficiency, reduce errors, and adapt dynamically to real-world needs."
                 imageUrl="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                 buttonText="Show More"
                 onButtonClick={() => alert("Button clicked!")}
@@ -91,7 +91,7 @@ export default function Layout() {
             <Section
               id="projects"
               title="Projects"
-              subtitle="Showcasing what I have done"
+              subtitle="Highlights of what I’ve built and delivered"
               gridCols="grid-cols-1 md:grid-cols-3 card-container"
               icon={<CIcon icon={cilPuzzle} className="w-9 h-9 flip-yoyo-y" />}
             >
@@ -131,7 +131,7 @@ export default function Layout() {
             <Section
               id="experience"
               title="Experience"
-              subtitle="My professional journey"
+              subtitle="An overview of my professional journey"
               gridCols="grid-cols-1"
               icon={
                 <CIcon
@@ -178,7 +178,7 @@ export default function Layout() {
             <Section
               id="education"
               title="Education"
-              subtitle="Showcasing what I have learned"
+              subtitle="Foundations of what I’ve learned and achieved"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
                 <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y" />
@@ -218,7 +218,7 @@ export default function Layout() {
             <Section
               id="contact"
               title="Contact"
-              subtitle="Reach me"
+              subtitle="Let’s connect and collaborate"
               gridCols="grid-cols-1 md:grid-cols-2"
               icon={
                 <CIcon icon={cilChatBubble} className="w-9 h-9 flip-yoyo-y" />

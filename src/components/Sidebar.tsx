@@ -123,10 +123,10 @@ const experiences: ExperienceItem[] = [
 ];
 
 const sidebarContent: Record<string, JSX.Element> = {
-  focus: (
-    <div className="text-center flex flex-col gap-5">
+  about: (
+    <div className="text-center flex flex-col gap-3">
       {/* Profile Card */}
-      <div className="card relative bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
+      <div className="profile-card relative pt-24 text-center">
         <div className="avatar w-36 h-36 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="rounded-full bg-base-100 border-4 border-base-300">
             <Image
@@ -143,7 +143,7 @@ const sidebarContent: Record<string, JSX.Element> = {
         <h2 className="text-xl font-semibold sm:text-2xl text-primary leading-snug pb-2">
           {portfolioConfig.name}
         </h2>
-        <div className="text-sm text-base-content/70 mb-6 mt-3 font-mono flex flex-wrap justify-center gap-2 leading-relaxed">
+        <div className="text-sm text-base-content/70 mb-6 mt-2 font-mono flex flex-wrap justify-center gap-2 leading-relaxed">
           {portfolioConfig.title.reduce<JSX.Element[]>((acc, title, i) => {
             // if (i > 0) {
             //   acc.push(
@@ -164,29 +164,29 @@ const sidebarContent: Record<string, JSX.Element> = {
           }, [])}
         </div>
 
-        <button className="btn btn-primary btn-outline btn-sm group rounded relative flex items-center justify-center overflow-hidden transition-all transform duration-400 hover:shadow-lg">
-          <span className="group-hover:text-base-100 ">Download Resume</span>
+        <button className="my-primary-btn group relative">
+          <span className="">Download Resume</span>
         </button>
       </div>
 
       {/* Social Links */}
-      <div className="flex justify-center gap-4">
-        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+      <div className="profile-card-body flex flex-row justify-center gap-4 ">
+        <div className="my-primary-svg-btn">
           <FaGithubAlt className="w-7 h-7 rounded-full" />
         </div>
-        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+        <div className="my-primary-svg-btn">
           <FaMedium className="w-7 h-7 rounded-full" />
         </div>
-        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+        <div className="my-primary-svg-btn">
           <BiLogoLinkedin className="w-7 h-7 rounded-full" />
         </div>
-        <div className="rounded-full border-1 border-primary p-1 bg-primary/10 text-primary transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100">
+        <div className="my-primary-svg-btn">
           <BiLogoGmail className="w-7 h-7 rounded-full" />
         </div>
       </div>
 
       {/* Bio */}
-      <div className="bg-base-100 p-4 rounded-md shadow">
+      <div className="profile-card-body">
         <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-right">
           <dt className="font-medium text-primary ">Location</dt>
           <dd className="text-base-content/80 text-left">Sri Lanka</dd>
@@ -204,8 +204,7 @@ const sidebarContent: Record<string, JSX.Element> = {
     </div>
   ),
   projects: (
-    <div className="relative flex flex-col gap-2 bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
-      <h3 className="font-bold text-lg mb-2 text-primary">Tags</h3>
+    <div className="sidebar-content">
       <div>
         {/* Filter Controls */}
         <FilterControls
@@ -231,19 +230,19 @@ const sidebarContent: Record<string, JSX.Element> = {
     </div>
   ),
   experience: (
-    <div className="relative flex flex-col gap-2 bg-base-100 rounded-lg shadow-md p-6 pt-24 text-center">
+    <div className="sidebar-content">
       <h3 className="font-bold text-lg mb-2">Experience</h3>
       <Timeline items={experiences} />;
     </div>
   ),
   education: (
-    <div>
+    <div className="sidebar-content">
       <h3 className="font-bold text-lg mb-2">Education</h3>
       <p>Degrees, certifications, and continuous learning paths.</p>
     </div>
   ),
   contact: (
-    <div>
+    <div className="sidebar-content">
       <h3 className="font-bold text-lg mb-2">Get in Touch</h3>
       <p>Email: example@email.com</p>
       <p>LinkedIn: /your-profile</p>

@@ -2,42 +2,25 @@
 @plugin "daisyui" {
   themes: nord --default, dim --prefersdark, cupcake;
 }
+@plugin "daisyui/theme" {
+  name: "nord";
+  default: true;
+  --color-primary: #4b678a;
+}
 
 :root {
-  /* --background: #ffffff; */
-  /* --foreground: #171717; */
   --header-height: 45px;
 }
 
 /* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 } */
 
-/* @plugin "daisyui/theme" {
-  name: "nord";
-  default: true;
-
-  --color-base-400: oklch(86% 0.022 263.7);
-} */
-
-
-
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}*/
 
 body {
-  /* background: var(--background); */
-  /* color: var(--foreground); */
   font-family: Arial, Helvetica, sans-serif;
-} 
+}
 
 html {
   scroll-behavior: smooth;
@@ -137,6 +120,37 @@ html {
   * {
     scrollbar-width: thin;
   }
+
+  .profile-card {
+    @apply card bg-base-100 rounded-lg shadow-md p-6;
+  }
+
+  .profile-card-body {
+    @apply card-body bg-base-100 rounded-lg shadow-md;
+  }
+
+  .sidebar-content {
+    @apply relative flex flex-col gap-2 bg-base-100 rounded-lg shadow-md p-6 pt-12 text-center;
+  }
+
+  .section-card {
+    @apply card h-auto rounded-lg shadow bg-info/5 border p-0 border-primary/10
+              transition-all duration-400
+              hover:scale-[101%] hover:shadow-lg;
+  }
+
+  .my-primary-btn {
+    @apply btn btn-primary btn-outline btn-sm rounded flex      
+              items-center justify-center overflow-hidden 
+              transition-all transform duration-400 hover:shadow-lg;
+  }
+
+  .my-primary-btn span {
+    @apply group-hover:text-base-100;
+  }
+
+  .my-primary-svg-btn {
+    @apply rounded-full border-1 border-primary p-1 bg-primary/10 text-primary 
+            transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100;
+  }
 }
-
-
