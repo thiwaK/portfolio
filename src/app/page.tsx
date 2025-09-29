@@ -10,6 +10,7 @@ import Section from "@/components/Section";
 import GoToTop from "@/components/ui/scroll_to_top";
 import CardFocus from "@/components/ui/card-focus";
 import CardProject from "@/components/ui/card-project";
+import CardCertificate from "@/components/ui/card-certificate";
 
 import { CIcon } from "@coreui/icons-react";
 import {
@@ -28,6 +29,51 @@ import CardExperience from "@/components/ui/card-experience";
 
 export default function Layout() {
   const [activeSection, setActiveSection] = useState("focus");
+
+  const education = [
+    {
+      title: "B.Sc. in Computer Science",
+      institution: "XYZ University",
+      year: "2018 - 2022",
+      description:
+        "Specialized in software engineering and geospatial analysis.",
+      gainedSkills: ["Python", "GIS", "PostgreSQL"],
+    },
+    {
+      title: "Full-Stack Web Development Bootcamp",
+      institution: "ABC Academy",
+      year: "2022",
+      description: "Hands-on projects building full-stack applications.",
+      gainedSkills: ["React", "Docker", "AWS"],
+    },
+  ];
+
+  const certifications = [
+    {
+      name: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon",
+      year: "2023",
+      image:
+        "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp", // path to certificate image
+      link: "https://www.credly.com/badges/your-aws-link",
+    },
+    {
+      name: "Google Data Analytics Certificate",
+      issuer: "Google",
+      year: "2022",
+      image:
+        "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp",
+      link: "https://www.credly.com/badges/your-google-link",
+    },
+    {
+      name: "Google Data Analytics Certificate",
+      issuer: "Google",
+      year: "2022",
+      image:
+        "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp",
+      link: "https://www.credly.com/badges/your-google-link",
+    },
+  ];
 
   return (
     <div className="root">
@@ -177,40 +223,61 @@ export default function Layout() {
             {/* Education */}
             <Section
               id="education"
-              title="Education"
+              title="Background"
               subtitle="Foundations of what I’ve learned and achieved"
-              gridCols="grid-cols-1 md:grid-cols-2"
+              gridCols=""
               icon={
                 <CIcon icon={cilEducation} className="w-9 h-9 flip-yoyo-y" />
               }
             >
-              {/* Education Card 1 */}
-              <div className="bg-info/5 p-6 rounded-lg transform duration-400 hover:scale-[101%] shadow-md hover:shadow-xl">
-                <h3 className="text-lg font-bold text-primary mb-1">
-                  BSc in Geomatics
-                </h3>
-                <p className="text-sm text-gray-500 mb-2">
-                  University of Colombo
-                </p>
-                <p className="text-sm text-gray-600">2015 - 2019</p>
-                <p className="mt-2 text-gray-700 text-sm">
-                  Specialized in GIS, Remote Sensing, and Spatial Data Analysis.
-                </p>
-              </div>
+              {/* Education milestones */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              {/* Education Card 2 */}
-              <div className="bg-info/5 p-6 rounded-lg transform duration-400 hover:scale-[101%] shadow-md hover:shadow-xl">
-                <h3 className="text-lg font-bold text-primary mb-1">
-                  Diploma in GIS & Remote Sensing
-                </h3>
-                <p className="text-sm text-gray-500 mb-2">
-                  National Institute of Technology
-                </p>
-                <p className="text-sm text-gray-600">2020</p>
-                <p className="mt-2 text-gray-700 text-sm">
-                  Focused on practical GIS applications, satellite image
-                  analysis, and spatial modeling.
-                </p>
+              {education.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="section-card p-6 flex flex-col justify-between"
+                >
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary">
+                      {item.title}
+                    </h3>
+                    <p className="text-base-content/70">
+                      {item.institution} • {item.year}
+                    </p>
+                    <p className="mt-2 text-base-content">{item.description}</p>
+                  </div>
+
+                  {/* Skills gained */}
+                  {item.gainedSkills?.length > 0 && (
+                    <div className="mt-4">
+                      <h4 className="text-sm font-semibold text-base-content/80 mb-1">
+                        Skills Gained
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {item.gainedSkills.map((skill, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+              </div>
+              
+              
+
+              {/* Certifications */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {certifications.map((cert, idx) => (
+                  <CardCertificate key={idx} cert={cert} />
+                ))}
+
               </div>
             </Section>
 

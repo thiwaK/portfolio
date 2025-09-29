@@ -85,7 +85,7 @@ export default function Navbar({
   }, []);
 
   return (
-    <header className="bg-base-100 shadow-md fixed top-0 left-0 z-999 w-full border-b border-transparent">
+    <header className="bg-base-100 shadow-md fixed top-0 left-0 z-999 w-full border-b border-transparent group">
       <ScrollProgress />
       <div className="px-6">
         <div className="flex h-(--header-height) items-center">

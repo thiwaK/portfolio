@@ -20,7 +20,7 @@ role,
   tools,
 }) => {
   return (
-     <div className="section-card p-4 group">
+     <div className="section-card p-6 group">
       {/* Role & Date */}
       <h4 className="font-semibold text-primary">{role}</h4>
 

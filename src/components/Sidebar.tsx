@@ -122,6 +122,16 @@ const experiences: ExperienceItem[] = [
   },
 ];
 
+const skills = [
+  "Python",
+  "React",
+  "GIS",
+  "Machine Learning",
+  "PostgreSQL",
+  "Docker",
+  "AWS",
+];
+
 const sidebarContent: Record<string, JSX.Element> = {
   about: (
     <div className="text-center flex flex-col gap-3">
@@ -231,14 +241,24 @@ const sidebarContent: Record<string, JSX.Element> = {
   ),
   experience: (
     <div className="sidebar-content">
-      <h3 className="font-bold text-lg mb-2">Experience</h3>
+      {/* <h3 className="font-bold text-lg mb-2">Experience</h3> */}
       <Timeline items={experiences} />;
     </div>
   ),
   education: (
+    
     <div className="sidebar-content">
-      <h3 className="font-bold text-lg mb-2">Education</h3>
-      <p>Degrees, certifications, and continuous learning paths.</p>
+      <h2 className="text-xl font-semibold mb-3">Skills</h2>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill, idx) => (
+            <span
+              key={idx}
+              className="px-3 py-1 text-sm bg-blue-100 text-accent-content rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
     </div>
   ),
   contact: (

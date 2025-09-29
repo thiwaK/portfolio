@@ -64,4 +64,12 @@ export const portfolioConfig = {
     ],
   },
 
+  nav: [
+    {id:"about", title:"About"},
+    {id:"projects", title:"Projects"},
+    {id:"experience", title:"Experience"},
+    {id:"education", title:"Education"},
+    {id:"contact", title:"Contact"},
+  ]
+
 };

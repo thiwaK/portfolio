@@ -46,6 +46,7 @@ export default function CardFocus({
             </button>
           </div> */}
         </div>
+        
       </div>
     </div>
   );

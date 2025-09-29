@@ -17,7 +17,6 @@
   --font-mono: var(--font-geist-mono);
 } */
 
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -139,6 +138,14 @@ html {
               hover:scale-[101%] hover:shadow-lg;
   }
 
+  .btn {
+    @apply transition-all duration-400 hover:shadow-lg;
+  }
+
+  .btn span {
+    @apply transition-all duration-400;
+  }
+
   .my-primary-btn {
     @apply btn btn-primary btn-outline btn-sm rounded flex      
               items-center justify-center overflow-hidden 
@@ -152,5 +159,13 @@ html {
   .my-primary-svg-btn {
     @apply rounded-full border-1 border-primary p-1 bg-primary/10 text-primary 
             transform duration-400 hover:scale-110 hover:shadow-lg hover:bg-primary hover:text-base-100;
+  }
+
+  .line-fill {
+    @apply relative h-[30px] w-full bg-gray-200 mb-4 overflow-hidden ;
+  }
+
+  .line-fill span {
+    @apply absolute left-0 top-0 h-full w-0 bg-purple-700 transition-all duration-300 group-hover:w-full;
   }
 }
