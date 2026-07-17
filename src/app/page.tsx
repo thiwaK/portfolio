@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
@@ -10,8 +10,8 @@ import sections from "@/sections";
 
 import GoToTop from "@/components/ui/scroll_to_top";
 
-import { Demo } from "@/components/timeline/time-line";
-import { TimelineSegment } from "@/components/timeline/types";
+// import { Demo } from "@/components/timeline/time-line";
+// import { TimelineSegment } from "@/components/timeline/types";
 
 import { SectionProvider } from "@/context/SectionContext";
 import { useActiveSection } from "@/hooks/useActiveSection";

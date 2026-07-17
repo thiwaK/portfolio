@@ -7,7 +7,7 @@ import { portfolioConfig } from "@/config/portfolio.config";
 export default function ExperienceContent() {
   return (
     <>
-      {portfolioConfig.experiences.map((experience) => (
+      {portfolioConfig.experiences.map((experience, index) => (
         <CardExperience
           // key={experience.id}
           role={experience.role}
