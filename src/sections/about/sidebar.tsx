@@ -6,6 +6,7 @@ import { FaMedium } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 
 import { portfolioConfig } from "@/config/portfolio.config";
+import { getAssetPath } from '@/utils/basePath';
 
 export default function AboutSidebar() {
   const age = new Date().getFullYear() - 1999;
@@ -22,7 +23,7 @@ export default function AboutSidebar() {
             <Image
               className="rounded-full bg-base-300 border-4 border-base-100 shadow transform duration-400 hover:scale-110 hover:shadow-lg"
               // src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
-              src="/avatar.png"
+              src={getAssetPath('/avatar.png')}
               alt="Profile image"
               width={500}
               height={500}

@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/utils/basePath";
 import Image from "next/image";
 
 interface CardProjectProps {
@@ -31,7 +32,7 @@ export default function CardProject({
       <div className="relative w-full h-44 overflow-hidden">
 
         <Image
-          src={imageUrl}
+          src={getAssetPath(imageUrl)}
           alt={title}
           width={500}
           height={500}
