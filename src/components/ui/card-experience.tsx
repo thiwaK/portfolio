@@ -1,6 +1,7 @@
 import React from "react";
 
 interface CardExperienceProps {
+  key: number;
   role: string;
   company?: string;
   companyUrl?: string;
@@ -11,6 +12,7 @@ interface CardExperienceProps {
 }
 
 const CardExperience: React.FC<CardExperienceProps> = ({
+  key,
   role,
   company,
   companyUrl,

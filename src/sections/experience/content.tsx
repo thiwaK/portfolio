@@ -9,7 +9,7 @@ export default function ExperienceContent() {
     <>
       {portfolioConfig.experiences.map((experience, index) => (
         <CardExperience
-          // key={experience.id}
+          key={index}
           role={experience.role}
           company={experience.company}
           date={experience.date}
