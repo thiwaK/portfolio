@@ -1,13 +1,24 @@
 import type { NextConfig } from "next";
 
-module.exports = {
-  images: {
-    remotePatterns: [new URL('https://img.daisyui.com/**')],
-  },
-}
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'portfolio';
 
 const nextConfig: NextConfig = {
-  // output: 'export'
+  output: 'export',
+
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
+
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.daisyui.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
