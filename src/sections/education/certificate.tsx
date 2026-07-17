@@ -22,8 +22,6 @@
         gap-4
       "
     >
-        {certifications.map((cert, idx) => (
-            <CardCertificate key={idx} cert={cert} />
-        ))}
+        { }
     </div>
 </div>
