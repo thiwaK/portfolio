@@ -7,7 +7,8 @@ import { FaMedium } from "react-icons/fa6";
 
 import CardFocus from "@/components/ui/card-focus";
 import { portfolioConfig } from "@/config/portfolio.config";
-import { ContourNoiseCanvas, ContourNoiseCard } from "@/components/animation/flows";
+import { getAssetPath } from "@/utils/basePath";
+// import { ContourNoiseCanvas, ContourNoiseCard } from "@/components/animation/flows";
 
 export default function AboutContent() {
   const age = new Date().getFullYear() - 1999;
@@ -32,7 +33,7 @@ export default function AboutContent() {
           <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/20 shadow-md shrink-0">
             <Image
               className="rounded-full bg-base-300 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-              src="/avatar.png"
+              src={getAssetPath("/avatar.png")}
               alt="Profile image"
               width={150}
               height={150}
@@ -56,7 +57,7 @@ export default function AboutContent() {
           </div>
 
           <a
-            href="/resume.pdf"
+            href={getAssetPath("/resume.pdf")}
             download
             className="my-primary-btn group relative w-full text-center inline-flex items-center justify-center py-2"
           >

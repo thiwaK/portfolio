@@ -75,7 +75,7 @@ export const portfolioConfig = {
 
   bio: [
     { id: "location", label: "Location", value: "Gampaha, Sri Lanka" },
-    { id: "age", label: "Age", value: new Date().getFullYear() - 1999 },
+    // { id: "age", label: "Age", value: new Date().getFullYear() - 1999 },
     { id: "education", label: "Education", value: "B.Sc. (Hons) in GIS" },
     { id: "personality", label: "Personality", value: "INTJ-A" },
   ],

@@ -47,7 +47,7 @@ export default function AboutSidebar() {
         </div>
 
         <a
-          href="/resume.pdf"
+          href={getAssetPath("/resume.pdf")}
           download
           className="my-primary-btn group relative w-full text-center inline-flex items-center justify-center"
         >
