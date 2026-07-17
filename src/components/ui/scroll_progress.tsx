@@ -19,7 +19,7 @@ export default function ScrollProgress() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-1 bg-transparent">
+    <div className="absolute top-0 left-0 w-full h-1 bg-transparent backdrop-blur">
       <div
         className="progress progress-primary h-[0.15rem] bg-primary transition-all duration-150 rounded-xl"
         style={{ width: `${progress}%` }}

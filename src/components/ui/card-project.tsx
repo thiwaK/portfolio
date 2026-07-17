@@ -24,49 +24,135 @@ export default function CardProject({
 
   return (
     <div
-      className={`section-card overflow-hidden hover:scale-[101%] flex flex-col`}
-      data-tags={normalizedTags} // IMPORTANT for filtering
+      className="my-card h-full flex flex-col overflow-hidden group"
+      data-tags={normalizedTags}
     >
-      {/* Image */}
-      <Image src={imageUrl} alt={title} width={500} height={500} className="w-full h-40 object-cover" />
+      {/* Image + Title Overlay */}
+      <div className="relative w-full h-44 overflow-hidden">
+
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={500}
+          height={500}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 pattern-background-box"
+        />
+
+        {/* Overlay */}
+        <div
+          className="
+        absolute inset-0 
+        bg-black/10 
+        transition-all duration-300
+        group-hover:bg-black/45
+      "
+        />
+
+        {/* Title */}
+        <div className="absolute inset-0 flex items-center justify-center p-5 text-center">
+          <h2 className="font-bold text-xl text-primary tracking-wide uppercase drop-shadow-md text-buffer-halo"> {title} </h2>
+        </div>
+
+      </div>
+
 
       {/* Body */}
-      <div className="p-4 flex-1">
-        {/* Dynamic Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-col flex-1 p-5">
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 text-[0.6rem] whitespace-nowrap badge badge-soft badge-dash badge-sm"
+              className="
+            badge 
+            badge-soft 
+            badge-dash 
+            badge-sm
+            text-[0.65rem]
+          "
             >
               {tag}
             </span>
           ))}
         </div>
 
-        {/* Title */}
-        <h2 className="font-semibold text-primary">{title}</h2>
 
         {/* Description */}
-        <p className="text-primary text-sm mt-1 line-clamp-3">{description}</p>
-      </div>
-
-      {/* Footer */}
-      <div className="flex items-center gap-2 p-4 bg-base-300/30 leading-0">
-        <button
-          onClick={onButtonClick}
-          className="flex-1 btn btn-sm btn-neutral btn-soft border-2 rounded group"
+        <p
+          className="
+        text-secondary
+        text-sm
+        leading-relaxed
+        line-clamp-5
+      "
         >
-          <span className="group-hover:text-gray-100 text-[color-mix(in_oklch,_var(--color-primary)_90%,_black)]">
-            {buttonText}
-          </span>
-        </button>
+          {description}
+        </p>
 
-        <button className="btn btn-sm btn-soft btn-neutral border-2 rounded group hover:bg-rose-100 hover:border-rose-200">
-          <span className="group-hover:hidden">❤️</span>
-          <span className="hidden group-hover:inline-flex">💖</span>
-        </button>
+
+        {/* Spacer pushes footer down */}
+        <div className="flex-1" />
+
+
+        {/* Footer */}
+        <div
+          className="
+        mt-5
+        pt-4
+        border-t
+        border-dashed
+        border-base-content/15
+        flex
+        items-center
+        gap-2
+      "
+        >
+
+          <button
+            onClick={onButtonClick}
+            className="
+          flex-1
+          btn
+          btn-sm
+          btn-soft
+          font-semibold
+          rounded-md
+          border
+          border-accent/20
+          bg-accent/5
+          text-accent
+          transition-all
+          duration-300
+          hover:border-accent/50
+          hover:bg-accent/10
+          group/button
+        "
+          >
+            <span className="transition-transform duration-300 group-hover/button:translate-x-1">
+              {buttonText}
+            </span>
+          </button>
+
+
+          <button
+            className="
+          btn
+          btn-sm
+          btn-square
+          btn-soft
+          hover:bg-rose-100
+          hover:text-rose-500
+          transition-colors
+        "
+          >
+            ❤️
+          </button>
+
+        </div>
+
       </div>
+
     </div>
   );
 }

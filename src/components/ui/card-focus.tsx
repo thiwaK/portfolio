@@ -16,38 +16,138 @@ export default function CardFocus({
   onButtonClick,
 }: CardFocusProps) {
   return (
-    <div
-      className="section-card border-b-0"
+    <article
+      className="
+        group
+        overflow-hidden
+        shadow-sm
+        transition-all
+        hover:-translate-y-1
+        hover:shadow-xl
+        my-card
+      "
     >
-      <div className="flex h-full">
+
+      <div className="flex flex-col md:flex-row h-full">
+
         {/* Image */}
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={300}
-          height={300}
-          className="w-1/3 h-full object-cover rounded-l-lg"
-        />
+        <div
+          className="
+            relative
+            h-52
+            md:h-auto
+            md:w-[38%]
+            overflow-hidden
+            
+          "
+        >
+
+          <div className="relative h-full w-full pattern-background group-hover:scale-110 duration-200">
+
+          </div>
+          {/* <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="
+              object-cover
+              transition-transform
+              duration-500
+              group-hover:scale-105
+            "
+          /> */}
+        </div>
 
         {/* Content */}
-        <div className="p-4 flex-1 flex flex-col justify-between">
+        <div
+          className="
+            flex
+            flex-1
+            flex-col
+            justify-between
+            p-6
+          "
+        >
+
           <div>
-            <h2 className="card-title text-primary">{title}</h2>
-            <p className="text-base-content/70 line-clamp-4 pt-3 leading-relaxed">{description}</p>
+
+            {/* <div
+              className="
+                mb-3
+                inline-flex
+                rounded-full
+                bg-primary/10
+                px-3
+                py-1
+                text-xs
+                font-medium
+                text-primary
+              "
+            >
+              Primary Focus
+            </div> */}
+
+            <h2
+              className="
+                text-xl
+                font-semibold
+                tracking-tight
+                text-base-content
+              "
+            >
+              {title}
+            </h2>
+
+            <p
+              className="
+                mt-4
+                text-sm
+                leading-relaxed
+                text-base-content/70
+                line-clamp-4
+              "
+            >
+              {description}
+            </p>
+
           </div>
 
-          {/* <div className="card-actions justify-end pt-2">
+          {/* Footer */}
+          <div className="mt-4 flex items-center justify-between">
+
             <button
-              className="btn btn-primary btn-xs btn-outline rounded 
-                         dark:hover:text-primary-content group"
+              className="
+                text-xs
+                font-mono
+                font-semibold
+                px-3
+                py-1.5
+                rounded-md
+                border
+                border-accent/20
+                bg-accent/5
+                text-accent
+                transition-all
+                duration-300
+                hover:border-accent/55
+                hover:bg-accent/10
+                cursor-pointer
+                inline-flex
+                items-center
+                gap-1
+              "
               onClick={onButtonClick}
             >
-              <span className="group-hover:text-base-100">{buttonText}</span>
+              {buttonText}
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
             </button>
-          </div> */}
+
+          </div>
+
         </div>
-        
+
       </div>
-    </div>
+
+    </article>
   );
 }

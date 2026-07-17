@@ -20,15 +20,16 @@ export default function Section({
   return (
     <section
       id={id}
-      className="card mb-16 min-h-[80vh] bg-base-100 p-6 shadow-md rounded-lg"
-    >
+      data-section={id}
+      className="card mb-16 min-h-[70vh] bg-base-100 p-6 shadow-md rounded-lg">
+        
       {/* Header */}
-      <div className="card-title flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div className="card-title flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-3">
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary/75 rounded-xl">
+          <div className="flex items-center justify-center w-12 h-12 bg-primary/5 text-primary/75 rounded-xl">
             {icon ?? (
               <svg
-                className="fill-none stroke-gray-500"
+                className="fill-none stroke-primary/50"
                 width="24"
                 height="24"
                 viewBox="0 0 64 64"
@@ -43,11 +44,11 @@ export default function Section({
           </div>
 
           <div className="min-w-0 flex-1">
-            <h3 className="sm:text-lg font-bold text-base-content/90 truncate">
+            <h3 className="sm:text-lg font-bold text-base-content/70 truncate">
               {title}
             </h3>
             {subtitle && (
-              <p className="text-base-content/65 text-xs font-extralight sm:text-sm mt-1 truncate">
+              <p className="text-base-content/65 text-xs font-extralight sm:text-sm mt-0.5 truncate">
                 {subtitle}
               </p>
             )}
@@ -57,7 +58,7 @@ export default function Section({
       </div>
 
       {/* Content Grid */}
-      <div className={`card-body grid ${gridCols} gap-6 md:gap-10`}>
+      <div className={`card-body grid ${gridCols} gap-4 md:gap-6`}>
         {children}
       </div>
     </section>

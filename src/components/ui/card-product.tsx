@@ -26,18 +26,37 @@ export default function CardProduct({
   onButtonClick,
 }: CardProductProps) {
   return (
-    <div className="section-card">
+    <div className="my-card h-full flex flex-col overflow-hidden rounded-box border border-base-content/10 shadow-sm transition-all duration-300 hover:scale-[101%] group">
+
       {/* Image */}
-      <Image src={imageUrl} alt={title} width={288} height={288} className="w-full h-40 object-cover" />
+      <div className="relative overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={288}
+          height={288}
+          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+
+        {/* Discount Badge */}
+        {discount && (
+          <div className="absolute top-3 right-3">
+            <span className="badge badge-success badge-sm font-semibold shadow">
+              {discount}
+            </span>
+          </div>
+        )}
+      </div>
 
       {/* Body */}
-      <div className="p-4">
+      <div className="flex flex-col flex-1 p-5">
+
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-2">
+        <div className="flex flex-wrap gap-1.5 mb-3">
           {tags.map((tag, i) => (
             <span
               key={i}
-              className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
+              className="badge badge-soft badge-dash badge-sm text-[0.7rem]"
             >
               {tag}
             </span>
@@ -45,48 +64,60 @@ export default function CardProduct({
         </div>
 
         {/* Title */}
-        <h2 className="font-semibold text-gray-800">{title}</h2>
+        <h3 className="text-lg font-bold text-primary leading-snug line-clamp-2">
+          {title}
+        </h3>
 
         {/* Price */}
-        <div className="flex items-center gap-2 mt-1">
-          <span className="text-lg font-bold text-gray-900">
+        <div className="mt-3 flex items-end gap-2">
+          <span className="text-2xl font-bold text-base-content">
             Rp {price.toLocaleString()}
           </span>
+
           {oldPrice && (
-            <span className="line-through text-gray-400 text-sm">
+            <span className="text-sm line-through text-base-content/40">
               Rp {oldPrice.toLocaleString()}
-            </span>
-          )}
-          {discount && (
-            <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded">
-              {discount}
             </span>
           )}
         </div>
 
         {/* Rating */}
-        <div className="flex items-center mt-2 text-yellow-500 text-sm">
-          {"★".repeat(Math.floor(rating))}
-          {"☆".repeat(5 - Math.floor(rating))}
-          <span className="ml-2 text-gray-500">{reviews} reviews</span>
+        <div className="mt-3 flex items-center gap-2 text-sm">
+          <span className="text-warning tracking-wide">
+            {"★".repeat(Math.floor(rating))}
+            {"☆".repeat(5 - Math.floor(rating))}
+          </span>
+
+          <span className="text-base-content/60">
+            ({reviews} reviews)
+          </span>
         </div>
+
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* Footer */}
+        <div className="mt-5 pt-4 border-t border-dashed border-base-content/15 flex items-center gap-2">
+
+          <button
+            onClick={onButtonClick}
+            className="btn btn-primary btn-sm flex-1 rounded-lg"
+          >
+            {buttonText}
+          </button>
+
+          <button className="btn btn-soft btn-square btn-sm">
+            ❤️
+          </button>
+
+          <button className="btn btn-soft btn-square btn-sm">
+            👁
+          </button>
+
+        </div>
+
       </div>
 
-      {/* Footer */}
-      <div className="flex items-center gap-2 p-4 border-t">
-        <button
-          onClick={onButtonClick}
-          className="flex-1 btn btn-sm bg-primary text-white hover:bg-primary/90 rounded"
-        >
-          {buttonText}
-        </button>
-        <button className="btn btn-sm bg-gray-100 hover:bg-gray-200 rounded">
-          ♥
-        </button>
-        <button className="btn btn-sm bg-gray-100 hover:bg-gray-200 rounded">
-          👁
-        </button>
-      </div>
     </div>
   );
 }

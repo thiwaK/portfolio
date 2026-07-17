@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased no-scrollbar`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased no-scrollbar bg-primary/5`}>
         {children}
       </body>
     </html>

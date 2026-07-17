@@ -10,7 +10,7 @@ module.exports = {
       },
       animation: {
         rotateYoyo: "rotateYoyo 0.8s ease-in-out",
-      },
+      }
     },
   },
 };
