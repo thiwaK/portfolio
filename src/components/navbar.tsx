@@ -9,7 +9,7 @@ import { MdDarkMode } from "react-icons/md";
 import { useSectionContext } from "@/context/SectionContext";
 
 const SCROLL_OFFSET = -130;
-const lightThemeName = "winter";
+const lightThemeName = "corporate";
 const darkThemeName = "dim";
 
 export default function Navbar() {

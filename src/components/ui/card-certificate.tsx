@@ -32,7 +32,7 @@ export default function CardCertificate({ cert }: CardCertificateProps) {
               className="w-12 h-12 object-cover rounded"
             />
           ) : (
-            <div className="w-12 h-12 rounded bg-gray-200 flex items-center justify-center text-xs">
+            <div className="w-12 h-12 rounded bg-base-300 flex items-center justify-center text-xs">
               CERT
             </div>
           )}
@@ -41,7 +41,7 @@ export default function CardCertificate({ cert }: CardCertificateProps) {
             <p className="text-sm text-base-content/70">
               {cert.issuer ?? "Unknown issuer"} • {cert.year ?? "—"}
             </p>
-            <span className="text-sm text-blue-600 mt-1 inline-block">
+            <span className="text-sm text-primary hover:underline mt-1 inline-block">
               View details →
             </span>
           </div>

@@ -38,6 +38,12 @@ const Footer = () => {
             >
               Experience
             </a>
+            <a
+              href="#education"
+              className="hover:text-primary transition-colors"
+            >
+              Education
+            </a>
             <a href="#contact" className="hover:text-primary transition-colors">
               Contact
             </a>

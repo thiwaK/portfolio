@@ -52,7 +52,7 @@ export default function ContactSidebar() {
         <div className="flex flex-col">
           <span className="text-xs font-semibold text-base-content/50 uppercase tracking-wider mb-0.5">GitHub</span>
           <a
-            href={`https://github.com/{githubHandle}`}
+            href={`https://github.com/${githubHandle}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-base-content/80 hover:text-primary transition-colors font-mono flex items-center gap-1"

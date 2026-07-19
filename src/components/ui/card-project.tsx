@@ -82,7 +82,7 @@ export default function CardProject({
         {/* Description */}
         <p
           className="
-        text-secondary
+        text-base-content/80
         text-sm
         leading-relaxed
         line-clamp-5

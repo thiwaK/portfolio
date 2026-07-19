@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
-module.exports = {
-  images: {
-    remotePatterns: [new URL('https://img.daisyui.com/**')],
-  },
-}
-
 const nextConfig: NextConfig = {
-  // output: 'export'
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.daisyui.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

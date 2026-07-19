@@ -45,7 +45,7 @@ function LayoutContent() {
             </aside>
 
             {/* RIGHT COLUMN */}
-            <div className="grid grid-cols-1 text-black max-w-5xl">
+            <div className="grid grid-cols-1 text-base-content max-w-5xl">
               {sections.map((section) => {
                 const Content = section.Content;
 

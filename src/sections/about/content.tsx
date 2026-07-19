@@ -144,29 +144,25 @@ export default function AboutContent() {
         {portfolioConfig.impact.map((impact) => (
           <div
             key={impact.id}
-            className="
-              group relative overflow-hidden
-              p-4
-              pt-6
-              my-card
-            "
+            className="group relative overflow-hidden rounded-lg border border-base-300/60 bg-base-100/90 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40"
           >
-
-            {/* Optional large background number/icon */}
-            <span className="absolute -right-4 -bottom-2 text-7xl font-black text-base-300/20 select-none group-hover:text-base-300/40">
+            {/* Ghost watermark number — anchored to card bottom-right */}
+            <span className="absolute bottom-1 right-2 text-6xl font-black text-base-300/15 select-none group-hover:text-base-300/30 transition-colors duration-300 leading-none">
               {String(impact.id).padStart(2, "0")}
             </span>
 
-            {/* Top accent */}
-            <div className="absolute left-0 top-0 h-15 w-full bg-gradient-to-r from-primary via-accent-500 to-accent" />
-
-
-            <div className="relative z-10 flex flex-col gap-3">
-              <h3 className="text-[1.0rem] font-semibold uppercase tracking-[0.25em] text-base-100 ">
+            {/* Gradient header band */}
+            <div className="relative flex items-center px-4 py-3 bg-gradient-to-r from-primary to-accent overflow-hidden">
+              {/* Subtle shimmer overlay */}
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <h3 className="relative z-10 text-[0.9rem] font-bold uppercase tracking-[0.2em] text-white drop-shadow-sm leading-tight">
                 {impact.title}
               </h3>
+            </div>
 
-              <p className="text-sm leading-5 pt-2 text-secondary">
+            {/* Value area */}
+            <div className="px-4 py-4">
+              <p className="relative z-10 text-sm leading-5 text-base-content/80">
                 {impact.value}
               </p>
             </div>

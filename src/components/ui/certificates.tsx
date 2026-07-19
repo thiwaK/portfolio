@@ -44,17 +44,17 @@ export default function Certifications({ certifications }: CertificationsProps) 
             key={idx}
             type="button"
             onClick={() => setSelectedCert(cert)}
-            className="p-4 bg-gray-50 rounded-lg border border-gray-200 text-left hover:shadow-md transition"
+            className="p-4 bg-base-200/50 rounded-lg border border-base-content/10 text-left hover:shadow-md transition w-full cursor-pointer"
           >
             <div className="flex items-center gap-3">
               {cert.image ? (
                 <img
                   src={cert.image}
                   alt={`${cert.name} badge`}
-                  className="w-12 h-12 object-cover rounded"
+                  className="w-12 h-12 object-cover rounded border border-base-content/10"
                 />
               ) : (
-                <div className="w-12 h-12 rounded bg-gray-200 flex items-center justify-center text-xs">
+                <div className="w-12 h-12 rounded bg-base-300 flex items-center justify-center text-xs text-base-content/50">
                   CERT
                 </div>
               )}
@@ -63,7 +63,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
                 <p className="text-sm text-base-content/70">
                   {cert.issuer ?? "Unknown issuer"} • {cert.year ?? "—"}
                 </p>
-                <span className="text-sm text-blue-600 mt-1 inline-block">
+                <span className="text-sm text-primary hover:underline mt-1 inline-block">
                   View details →
                 </span>
               </div>
@@ -74,19 +74,19 @@ export default function Certifications({ certifications }: CertificationsProps) 
 
       {/* Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="relative bg-white rounded-lg shadow-xl max-w-xl w-full p-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="relative bg-base-100 border border-base-content/10 rounded-lg shadow-xl max-w-xl w-full p-6 text-base-content">
             <button
               ref={closeBtnRef}
               type="button"
               onClick={() => setSelectedCert(null)}
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+              className="absolute top-3 right-3 text-base-content/60 hover:text-base-content cursor-pointer transition-colors"
               aria-label="Close certificate"
             >
               ✕
             </button>
 
-            <h3 className="text-lg font-semibold">{selectedCert.name}</h3>
+            <h3 className="text-lg font-semibold text-base-content">{selectedCert.name}</h3>
             <p className="text-sm text-base-content/70">
               {selectedCert.issuer ?? "Unknown issuer"} • {selectedCert.year ?? "—"}
             </p>
@@ -97,10 +97,10 @@ export default function Certifications({ certifications }: CertificationsProps) 
                 <img
                   src={selectedCert.image}
                   alt={`${selectedCert.name} Certificate`}
-                  className="w-full object-contain rounded border"
+                  className="w-full object-contain rounded border border-base-content/10"
                 />
               ) : (
-                <div className="w-full rounded border p-6 text-center text-sm text-gray-500">
+                <div className="w-full rounded border border-base-content/10 p-6 text-center text-sm text-base-content/50">
                   No certificate image provided.
                 </div>
               )}
@@ -113,12 +113,12 @@ export default function Certifications({ certifications }: CertificationsProps) 
                   href={selectedCert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                  className="btn btn-primary btn-sm rounded-md"
                 >
                   Verify Credential
                 </a>
               ) : (
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-base-content/50">
                   No verification link available
                 </span>
               )}
@@ -126,7 +126,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
               <button
                 type="button"
                 onClick={() => setSelectedCert(null)}
-                className="px-3 py-2 border rounded text-sm"
+                className="btn btn-outline btn-sm rounded-md"
               >
                 Close
               </button>
