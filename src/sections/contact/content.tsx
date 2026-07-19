@@ -240,7 +240,7 @@ export default function ContactContent() {
               Gampaha Grid Trace V1.0
             </div>
             <div className="absolute top-1 left-2 text-[0.6rem] font-mono text-base-content/40 select-none pointer-events-none">
-              7°05'14.3" N · 79°59'52.8" E
+              7&deg;05&apos;14.3&quot; N &middot; 79&deg;59&apos;52.8&quot; E
             </div>
 
             {/* Hover dynamic cursor dot and lines */}
